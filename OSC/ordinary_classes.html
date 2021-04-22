@@ -1,0 +1,2487 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>biquad &mdash; Sound Design Toolkit OSC Quick Reference v3.0-080dev documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Ordinary Classes" href="ordinary_classes_index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Sound Design Toolkit OSC Quick Reference
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v3.0-080dev
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ordinary_classes_index.html">Ordinary Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ordinary_classes_index.html#setter-methods">Setter methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ordinary_classes_index.html#json-methods">JSON methods</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ordinary_classes_index.html#classes">Classes</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">biquad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#attributes">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utilities">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bouncing">bouncing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#breaking">breaking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bubble">bubble</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#crumpling">crumpling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dcmotor">dcmotor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#demix">demix</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id11">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#envelope">envelope</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#explosion">explosion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id15">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fluidflow">fluidflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id17">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#modaltracker">modaltracker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id19">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#motor">motor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id21">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#myo">myo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id23">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#pitch">pitch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id25">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#pitchshift">pitchshift</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id27">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id28">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#reverb">reverb</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id29">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id30">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rolling">rolling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id31">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id32">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#scraping">scraping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id33">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id34">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#spectralfeats">spectralfeats</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id35">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id36">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#windcavity">windcavity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id37">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id38">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#windkarman">windkarman</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id39">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id40">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#windflow">windflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id41">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id42">utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#zerox">zerox</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id43">attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id44">utilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sound Design Toolkit OSC Quick Reference</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="ordinary_classes_index.html">Ordinary Classes</a> &raquo;</li>
+        
+      <li>biquad</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/ordinary_classes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="biquad">
+<h1>biquad<a class="headerlink" href="#biquad" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="attributes">
+<h2>attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="utilities">
+<h2>utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the biquad instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">biquad</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the biquad instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">biquad</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the biquad instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">biquad</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="bouncing">
+<h1>bouncing<a class="headerlink" href="#bouncing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>attributes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>restitution</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the bouncing instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: restitution value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">bouncing</span><span class="o">/</span><span class="n">restitution</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>height</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the bouncing instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: height value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">bouncing</span><span class="o">/</span><span class="n">height</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>irregularity</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the bouncing instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: irregularity value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">bouncing</span><span class="o">/</span><span class="n">irregularity</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>utilities<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the bouncing instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">bouncing</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the bouncing instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">bouncing</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the bouncing instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">bouncing</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="breaking">
+<h1>breaking<a class="headerlink" href="#breaking" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id3">
+<h2>attributes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>storedEnergy</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the breaking instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: storedEnergy value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">breaking</span><span class="o">/</span><span class="n">storedEnergy</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>crushing</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the breaking instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: crushing value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">breaking</span><span class="o">/</span><span class="n">crushing</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>granularity</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the breaking instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: granularity value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">breaking</span><span class="o">/</span><span class="n">granularity</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>fragmentation</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the breaking instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: fragmentation value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">breaking</span><span class="o">/</span><span class="n">fragmentation</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>utilities<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the breaking instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">breaking</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the breaking instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">breaking</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the breaking instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">breaking</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="bubble">
+<h1>bubble<a class="headerlink" href="#bubble" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id5">
+<h2>attributes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>radius</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the bubble instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: radius value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">bubble</span><span class="o">/</span><span class="n">radius</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>riseFactor</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the bubble instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: riseFactor value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">bubble</span><span class="o">/</span><span class="n">riseFactor</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>depth</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the bubble instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: depth value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">bubble</span><span class="o">/</span><span class="n">depth</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>utilities<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the bubble instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">bubble</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the bubble instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">bubble</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the bubble instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">bubble</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="crumpling">
+<h1>crumpling<a class="headerlink" href="#crumpling" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id7">
+<h2>attributes<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>crushing</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the crumpling instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: crushing value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">crumpling</span><span class="o">/</span><span class="n">crushing</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>granularity</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the crumpling instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: granularity value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">crumpling</span><span class="o">/</span><span class="n">granularity</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>fragmentation</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the crumpling instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: fragmentation value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">crumpling</span><span class="o">/</span><span class="n">fragmentation</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>utilities<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the crumpling instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">crumpling</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the crumpling instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">crumpling</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the crumpling instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">crumpling</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="dcmotor">
+<h1>dcmotor<a class="headerlink" href="#dcmotor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id9">
+<h2>attributes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>maxSize</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: maxSize value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">maxSize</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>coils</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: coils value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">coils</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>size</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: size value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">size</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>reson</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: reson value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">reson</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>gearRatio</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: gearRatio value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">gearRatio</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>harshness</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: harshness value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">harshness</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>rotorGain</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: rotorGain value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">rotorGain</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>gearGain</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: gearGain value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">gearGain</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>brushGain</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: brushGain value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">brushGain</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>airGain</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: airGain value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">airGain</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2>utilities<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the dcmotor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dcmotor</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="demix">
+<h1>demix<a class="headerlink" href="#demix" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id11">
+<h2>attributes<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>size</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the demix instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: size value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">demix</span><span class="o">/</span><span class="n">size</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>radius</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the demix instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: radius value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">demix</span><span class="o">/</span><span class="n">radius</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>overlap</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the demix instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: overlap value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">demix</span><span class="o">/</span><span class="n">overlap</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>noiseThreshold</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the demix instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: noiseThreshold value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">demix</span><span class="o">/</span><span class="n">noiseThreshold</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>tonalThreshold</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the demix instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: tonalThreshold value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">demix</span><span class="o">/</span><span class="n">tonalThreshold</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h2>utilities<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the demix instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">demix</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the demix instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">demix</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the demix instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">demix</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="envelope">
+<h1>envelope<a class="headerlink" href="#envelope" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id13">
+<h2>attributes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>attack</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the envelope instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: attack value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">envelope</span><span class="o">/</span><span class="n">attack</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>release</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the envelope instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: release value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">envelope</span><span class="o">/</span><span class="n">release</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h2>utilities<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the envelope instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">envelope</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the envelope instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">envelope</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the envelope instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">envelope</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="explosion">
+<h1>explosion<a class="headerlink" href="#explosion" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id15">
+<h2>attributes<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>maxScatter</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the explosion instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: maxScatter value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">explosion</span><span class="o">/</span><span class="n">maxScatter</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>maxDelay</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the explosion instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: maxDelay value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">explosion</span><span class="o">/</span><span class="n">maxDelay</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>blastTime</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the explosion instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: blastTime value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">explosion</span><span class="o">/</span><span class="n">blastTime</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>scatterTime</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the explosion instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: scatterTime value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">explosion</span><span class="o">/</span><span class="n">scatterTime</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>dispersion</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the explosion instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: dispersion value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">explosion</span><span class="o">/</span><span class="n">dispersion</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>distance</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the explosion instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: distance value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">explosion</span><span class="o">/</span><span class="n">distance</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>waveSpeed</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the explosion instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: waveSpeed value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">explosion</span><span class="o">/</span><span class="n">waveSpeed</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>windSpeed</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the explosion instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: windSpeed value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">explosion</span><span class="o">/</span><span class="n">windSpeed</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h2>utilities<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the explosion instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">explosion</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the explosion instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">explosion</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the explosion instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">explosion</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="fluidflow">
+<h1>fluidflow<a class="headerlink" href="#fluidflow" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id17">
+<h2>attributes<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>nBubbles</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: nBubbles value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">nBubbles</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>avgRate</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: avgRate value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">avgRate</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>minRadius</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: minRadius value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">minRadius</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>maxRadius</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: maxRadius value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">maxRadius</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>expRadius</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: expRadius value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">expRadius</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>minDepth</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: minDepth value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">minDepth</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>maxDepth</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: maxDepth value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">maxDepth</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>expDepth</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: expDepth value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">expDepth</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>riseFactor</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: riseFactor value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">riseFactor</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>riseCutoff</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: riseCutoff value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">riseCutoff</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id18">
+<h2>utilities<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the fluidflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">fluidflow</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="modaltracker">
+<h1>modaltracker<a class="headerlink" href="#modaltracker" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id19">
+<h2>attributes<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>nModes</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the modaltracker instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: nModes value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">modaltracker</span><span class="o">/</span><span class="n">nModes</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>bufferSize</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the modaltracker instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: bufferSize value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">modaltracker</span><span class="o">/</span><span class="n">bufferSize</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>winSize</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the modaltracker instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: winSize value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">modaltracker</span><span class="o">/</span><span class="n">winSize</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>overlap</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the modaltracker instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: overlap value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">modaltracker</span><span class="o">/</span><span class="n">overlap</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h2>utilities<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the modaltracker instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">modaltracker</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the modaltracker instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">modaltracker</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the modaltracker instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">modaltracker</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="motor">
+<h1>motor<a class="headerlink" href="#motor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id21">
+<h2>attributes<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>maxDelay</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: maxDelay value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">maxDelay</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>cycle</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: cycle value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">cycle</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>nCylinders</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: nCylinders value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">nCylinders</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>cylinderSize</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: cylinderSize value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">cylinderSize</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>compressionRatio</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: compressionRatio value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">compressionRatio</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>sparkTime</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: sparkTime value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">sparkTime</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>asymmetry</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: asymmetry value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">asymmetry</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>backfire</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: backfire value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">backfire</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>intakeSize</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: intakeSize value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">intakeSize</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>extractorSize</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: extractorSize value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">extractorSize</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>exhaustSize</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: exhaustSize value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">exhaustSize</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>expansion</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: expansion value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">expansion</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>mufflerSize</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: mufflerSize value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">mufflerSize</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>mufflerFeedback</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: mufflerFeedback value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">mufflerFeedback</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>outletSize</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: outletSize value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">outletSize</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h2>utilities<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the motor instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">motor</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="myo">
+<h1>myo<a class="headerlink" href="#myo" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id23">
+<h2>attributes<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>dcFrequency</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the myo instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: dcFrequency value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">myo</span><span class="o">/</span><span class="n">dcFrequency</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>lowFrequency</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the myo instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: lowFrequency value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">myo</span><span class="o">/</span><span class="n">lowFrequency</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>highFrequency</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the myo instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: highFrequency value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">myo</span><span class="o">/</span><span class="n">highFrequency</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>threshold</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the myo instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: threshold value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">myo</span><span class="o">/</span><span class="n">threshold</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id24">
+<h2>utilities<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the myo instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">myo</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the myo instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">myo</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the myo instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">myo</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="pitch">
+<h1>pitch<a class="headerlink" href="#pitch" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id25">
+<h2>attributes<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>size</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitch instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: size value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitch</span><span class="o">/</span><span class="n">size</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>overlap</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitch instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: overlap value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitch</span><span class="o">/</span><span class="n">overlap</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>tolerance</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitch instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: tolerance value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitch</span><span class="o">/</span><span class="n">tolerance</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id26">
+<h2>utilities<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitch instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitch</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitch instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitch</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitch instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitch</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="pitchshift">
+<h1>pitchshift<a class="headerlink" href="#pitchshift" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id27">
+<h2>attributes<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>size</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitchshift instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: size value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitchshift</span><span class="o">/</span><span class="n">size</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>oversample</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitchshift instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: oversample value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitchshift</span><span class="o">/</span><span class="n">oversample</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>ratio</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitchshift instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: ratio value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitchshift</span><span class="o">/</span><span class="n">ratio</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>overlap</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitchshift instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: overlap value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitchshift</span><span class="o">/</span><span class="n">overlap</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id28">
+<h2>utilities<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitchshift instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitchshift</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitchshift instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitchshift</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the pitchshift instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">pitchshift</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="reverb">
+<h1>reverb<a class="headerlink" href="#reverb" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id29">
+<h2>attributes<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>maxDelay</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the reverb instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: maxDelay value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">reverb</span><span class="o">/</span><span class="n">maxDelay</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>xSize</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the reverb instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: xSize value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">reverb</span><span class="o">/</span><span class="n">xSize</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>ySize</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the reverb instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: ySize value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">reverb</span><span class="o">/</span><span class="n">ySize</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>zSize</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the reverb instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: zSize value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">reverb</span><span class="o">/</span><span class="n">zSize</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>randomness</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the reverb instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: randomness value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">reverb</span><span class="o">/</span><span class="n">randomness</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>time</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the reverb instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: time value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">reverb</span><span class="o">/</span><span class="n">time</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>time1k</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the reverb instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: time1k value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">reverb</span><span class="o">/</span><span class="n">time1k</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id30">
+<h2>utilities<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the reverb instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">reverb</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the reverb instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">reverb</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the reverb instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">reverb</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="rolling">
+<h1>rolling<a class="headerlink" href="#rolling" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id31">
+<h2>attributes<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>grain</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the rolling instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: grain value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">rolling</span><span class="o">/</span><span class="n">grain</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>depth</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the rolling instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: depth value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">rolling</span><span class="o">/</span><span class="n">depth</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>mass</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the rolling instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: mass value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">rolling</span><span class="o">/</span><span class="n">mass</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>velocity</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the rolling instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: velocity value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">rolling</span><span class="o">/</span><span class="n">velocity</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id32">
+<h2>utilities<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the rolling instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">rolling</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the rolling instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">rolling</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the rolling instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">rolling</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="scraping">
+<h1>scraping<a class="headerlink" href="#scraping" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id33">
+<h2>attributes<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>grain</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the scraping instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: grain value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">scraping</span><span class="o">/</span><span class="n">grain</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>force</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the scraping instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: force value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">scraping</span><span class="o">/</span><span class="n">force</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>velocity</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the scraping instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: velocity value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">scraping</span><span class="o">/</span><span class="n">velocity</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id34">
+<h2>utilities<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the scraping instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">scraping</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the scraping instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">scraping</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the scraping instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">scraping</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="spectralfeats">
+<h1>spectralfeats<a class="headerlink" href="#spectralfeats" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id35">
+<h2>attributes<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>size</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the spectralfeats instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: size value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">spectralfeats</span><span class="o">/</span><span class="n">size</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>overlap</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the spectralfeats instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: overlap value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">spectralfeats</span><span class="o">/</span><span class="n">overlap</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>minFreq</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the spectralfeats instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: minFreq value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">spectralfeats</span><span class="o">/</span><span class="n">minFreq</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>maxFreq</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the spectralfeats instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: maxFreq value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">spectralfeats</span><span class="o">/</span><span class="n">maxFreq</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id36">
+<h2>utilities<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the spectralfeats instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">spectralfeats</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the spectralfeats instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">spectralfeats</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the spectralfeats instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">spectralfeats</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="windcavity">
+<h1>windcavity<a class="headerlink" href="#windcavity" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id37">
+<h2>attributes<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>maxDelay</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windcavity instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: maxDelay value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windcavity</span><span class="o">/</span><span class="n">maxDelay</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>length</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windcavity instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: length value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windcavity</span><span class="o">/</span><span class="n">length</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>diameter</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windcavity instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: diameter value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windcavity</span><span class="o">/</span><span class="n">diameter</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id38">
+<h2>utilities<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windcavity instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windcavity</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windcavity instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windcavity</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windcavity instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windcavity</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="windkarman">
+<h1>windkarman<a class="headerlink" href="#windkarman" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id39">
+<h2>attributes<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>diameter</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windkarman instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: diameter value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windkarman</span><span class="o">/</span><span class="n">diameter</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id40">
+<h2>utilities<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windkarman instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windkarman</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windkarman instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windkarman</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windkarman instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windkarman</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="windflow">
+<h1>windflow<a class="headerlink" href="#windflow" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id41">
+<h2>attributes<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id42">
+<h2>utilities<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windflow instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windflow</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windflow</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the windflow instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">windflow</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="zerox">
+<h1>zerox<a class="headerlink" href="#zerox" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id43">
+<h2>attributes<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>size</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the zerox instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: size value (integer)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">zerox</span><span class="o">/</span><span class="n">size</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>overlap</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the zerox instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: overlap value (double)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">zerox</span><span class="o">/</span><span class="n">overlap</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id44">
+<h2>utilities<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>log</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the zerox instance (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">zerox</span><span class="o">/</span><span class="n">log</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>save</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the zerox instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for writing (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">zerox</span><span class="o">/</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>load</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: key for the zerox instance (string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filepath</span></code>: file path for reading (string)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">zerox</span><span class="o">/</span><span class="n">load</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="ordinary_classes_index.html" class="btn btn-neutral float-left" title="Ordinary Classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Marco Tiraboschi
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

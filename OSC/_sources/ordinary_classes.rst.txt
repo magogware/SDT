@@ -1,0 +1,1529 @@
+biquad
+======
+attributes
+----------
+
+
+utilities
+---------
+- log
+   * ``key``: key for the biquad instance (string)
+
+  ::
+
+    /biquad/log <key>
+
+- save
+   * ``key``: key for the biquad instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /biquad/save <key> <filepath>
+
+- load
+   * ``key``: key for the biquad instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /biquad/load <key> <filepath>
+
+bouncing
+========
+attributes
+----------
+- restitution
+   * ``key``: key for the bouncing instance (string)
+   * ``value``: restitution value (double)
+
+  ::
+
+    /bouncing/restitution <key> <value>
+
+- height
+   * ``key``: key for the bouncing instance (string)
+   * ``value``: height value (double)
+
+  ::
+
+    /bouncing/height <key> <value>
+
+- irregularity
+   * ``key``: key for the bouncing instance (string)
+   * ``value``: irregularity value (double)
+
+  ::
+
+    /bouncing/irregularity <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the bouncing instance (string)
+
+  ::
+
+    /bouncing/log <key>
+
+- save
+   * ``key``: key for the bouncing instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /bouncing/save <key> <filepath>
+
+- load
+   * ``key``: key for the bouncing instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /bouncing/load <key> <filepath>
+
+breaking
+========
+attributes
+----------
+- storedEnergy
+   * ``key``: key for the breaking instance (string)
+   * ``value``: storedEnergy value (double)
+
+  ::
+
+    /breaking/storedEnergy <key> <value>
+
+- crushing
+   * ``key``: key for the breaking instance (string)
+   * ``value``: crushing value (double)
+
+  ::
+
+    /breaking/crushing <key> <value>
+
+- granularity
+   * ``key``: key for the breaking instance (string)
+   * ``value``: granularity value (double)
+
+  ::
+
+    /breaking/granularity <key> <value>
+
+- fragmentation
+   * ``key``: key for the breaking instance (string)
+   * ``value``: fragmentation value (double)
+
+  ::
+
+    /breaking/fragmentation <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the breaking instance (string)
+
+  ::
+
+    /breaking/log <key>
+
+- save
+   * ``key``: key for the breaking instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /breaking/save <key> <filepath>
+
+- load
+   * ``key``: key for the breaking instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /breaking/load <key> <filepath>
+
+bubble
+======
+attributes
+----------
+- radius
+   * ``key``: key for the bubble instance (string)
+   * ``value``: radius value (double)
+
+  ::
+
+    /bubble/radius <key> <value>
+
+- riseFactor
+   * ``key``: key for the bubble instance (string)
+   * ``value``: riseFactor value (double)
+
+  ::
+
+    /bubble/riseFactor <key> <value>
+
+- depth
+   * ``key``: key for the bubble instance (string)
+   * ``value``: depth value (double)
+
+  ::
+
+    /bubble/depth <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the bubble instance (string)
+
+  ::
+
+    /bubble/log <key>
+
+- save
+   * ``key``: key for the bubble instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /bubble/save <key> <filepath>
+
+- load
+   * ``key``: key for the bubble instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /bubble/load <key> <filepath>
+
+crumpling
+=========
+attributes
+----------
+- crushing
+   * ``key``: key for the crumpling instance (string)
+   * ``value``: crushing value (double)
+
+  ::
+
+    /crumpling/crushing <key> <value>
+
+- granularity
+   * ``key``: key for the crumpling instance (string)
+   * ``value``: granularity value (double)
+
+  ::
+
+    /crumpling/granularity <key> <value>
+
+- fragmentation
+   * ``key``: key for the crumpling instance (string)
+   * ``value``: fragmentation value (double)
+
+  ::
+
+    /crumpling/fragmentation <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the crumpling instance (string)
+
+  ::
+
+    /crumpling/log <key>
+
+- save
+   * ``key``: key for the crumpling instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /crumpling/save <key> <filepath>
+
+- load
+   * ``key``: key for the crumpling instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /crumpling/load <key> <filepath>
+
+dcmotor
+=======
+attributes
+----------
+- maxSize
+   * ``key``: key for the dcmotor instance (string)
+   * ``value``: maxSize value (integer)
+
+  ::
+
+    /dcmotor/maxSize <key> <value>
+
+- coils
+   * ``key``: key for the dcmotor instance (string)
+   * ``value``: coils value (integer)
+
+  ::
+
+    /dcmotor/coils <key> <value>
+
+- size
+   * ``key``: key for the dcmotor instance (string)
+   * ``value``: size value (double)
+
+  ::
+
+    /dcmotor/size <key> <value>
+
+- reson
+   * ``key``: key for the dcmotor instance (string)
+   * ``value``: reson value (double)
+
+  ::
+
+    /dcmotor/reson <key> <value>
+
+- gearRatio
+   * ``key``: key for the dcmotor instance (string)
+   * ``value``: gearRatio value (double)
+
+  ::
+
+    /dcmotor/gearRatio <key> <value>
+
+- harshness
+   * ``key``: key for the dcmotor instance (string)
+   * ``value``: harshness value (double)
+
+  ::
+
+    /dcmotor/harshness <key> <value>
+
+- rotorGain
+   * ``key``: key for the dcmotor instance (string)
+   * ``value``: rotorGain value (double)
+
+  ::
+
+    /dcmotor/rotorGain <key> <value>
+
+- gearGain
+   * ``key``: key for the dcmotor instance (string)
+   * ``value``: gearGain value (double)
+
+  ::
+
+    /dcmotor/gearGain <key> <value>
+
+- brushGain
+   * ``key``: key for the dcmotor instance (string)
+   * ``value``: brushGain value (double)
+
+  ::
+
+    /dcmotor/brushGain <key> <value>
+
+- airGain
+   * ``key``: key for the dcmotor instance (string)
+   * ``value``: airGain value (double)
+
+  ::
+
+    /dcmotor/airGain <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the dcmotor instance (string)
+
+  ::
+
+    /dcmotor/log <key>
+
+- save
+   * ``key``: key for the dcmotor instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /dcmotor/save <key> <filepath>
+
+- load
+   * ``key``: key for the dcmotor instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /dcmotor/load <key> <filepath>
+
+demix
+=====
+attributes
+----------
+- size
+   * ``key``: key for the demix instance (string)
+   * ``value``: size value (integer)
+
+  ::
+
+    /demix/size <key> <value>
+
+- radius
+   * ``key``: key for the demix instance (string)
+   * ``value``: radius value (integer)
+
+  ::
+
+    /demix/radius <key> <value>
+
+- overlap
+   * ``key``: key for the demix instance (string)
+   * ``value``: overlap value (double)
+
+  ::
+
+    /demix/overlap <key> <value>
+
+- noiseThreshold
+   * ``key``: key for the demix instance (string)
+   * ``value``: noiseThreshold value (double)
+
+  ::
+
+    /demix/noiseThreshold <key> <value>
+
+- tonalThreshold
+   * ``key``: key for the demix instance (string)
+   * ``value``: tonalThreshold value (double)
+
+  ::
+
+    /demix/tonalThreshold <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the demix instance (string)
+
+  ::
+
+    /demix/log <key>
+
+- save
+   * ``key``: key for the demix instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /demix/save <key> <filepath>
+
+- load
+   * ``key``: key for the demix instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /demix/load <key> <filepath>
+
+envelope
+========
+attributes
+----------
+- attack
+   * ``key``: key for the envelope instance (string)
+   * ``value``: attack value (double)
+
+  ::
+
+    /envelope/attack <key> <value>
+
+- release
+   * ``key``: key for the envelope instance (string)
+   * ``value``: release value (double)
+
+  ::
+
+    /envelope/release <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the envelope instance (string)
+
+  ::
+
+    /envelope/log <key>
+
+- save
+   * ``key``: key for the envelope instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /envelope/save <key> <filepath>
+
+- load
+   * ``key``: key for the envelope instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /envelope/load <key> <filepath>
+
+explosion
+=========
+attributes
+----------
+- maxScatter
+   * ``key``: key for the explosion instance (string)
+   * ``value``: maxScatter value (integer)
+
+  ::
+
+    /explosion/maxScatter <key> <value>
+
+- maxDelay
+   * ``key``: key for the explosion instance (string)
+   * ``value``: maxDelay value (integer)
+
+  ::
+
+    /explosion/maxDelay <key> <value>
+
+- blastTime
+   * ``key``: key for the explosion instance (string)
+   * ``value``: blastTime value (double)
+
+  ::
+
+    /explosion/blastTime <key> <value>
+
+- scatterTime
+   * ``key``: key for the explosion instance (string)
+   * ``value``: scatterTime value (double)
+
+  ::
+
+    /explosion/scatterTime <key> <value>
+
+- dispersion
+   * ``key``: key for the explosion instance (string)
+   * ``value``: dispersion value (double)
+
+  ::
+
+    /explosion/dispersion <key> <value>
+
+- distance
+   * ``key``: key for the explosion instance (string)
+   * ``value``: distance value (double)
+
+  ::
+
+    /explosion/distance <key> <value>
+
+- waveSpeed
+   * ``key``: key for the explosion instance (string)
+   * ``value``: waveSpeed value (double)
+
+  ::
+
+    /explosion/waveSpeed <key> <value>
+
+- windSpeed
+   * ``key``: key for the explosion instance (string)
+   * ``value``: windSpeed value (double)
+
+  ::
+
+    /explosion/windSpeed <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the explosion instance (string)
+
+  ::
+
+    /explosion/log <key>
+
+- save
+   * ``key``: key for the explosion instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /explosion/save <key> <filepath>
+
+- load
+   * ``key``: key for the explosion instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /explosion/load <key> <filepath>
+
+fluidflow
+=========
+attributes
+----------
+- nBubbles
+   * ``key``: key for the fluidflow instance (string)
+   * ``value``: nBubbles value (integer)
+
+  ::
+
+    /fluidflow/nBubbles <key> <value>
+
+- avgRate
+   * ``key``: key for the fluidflow instance (string)
+   * ``value``: avgRate value (double)
+
+  ::
+
+    /fluidflow/avgRate <key> <value>
+
+- minRadius
+   * ``key``: key for the fluidflow instance (string)
+   * ``value``: minRadius value (double)
+
+  ::
+
+    /fluidflow/minRadius <key> <value>
+
+- maxRadius
+   * ``key``: key for the fluidflow instance (string)
+   * ``value``: maxRadius value (double)
+
+  ::
+
+    /fluidflow/maxRadius <key> <value>
+
+- expRadius
+   * ``key``: key for the fluidflow instance (string)
+   * ``value``: expRadius value (double)
+
+  ::
+
+    /fluidflow/expRadius <key> <value>
+
+- minDepth
+   * ``key``: key for the fluidflow instance (string)
+   * ``value``: minDepth value (double)
+
+  ::
+
+    /fluidflow/minDepth <key> <value>
+
+- maxDepth
+   * ``key``: key for the fluidflow instance (string)
+   * ``value``: maxDepth value (double)
+
+  ::
+
+    /fluidflow/maxDepth <key> <value>
+
+- expDepth
+   * ``key``: key for the fluidflow instance (string)
+   * ``value``: expDepth value (double)
+
+  ::
+
+    /fluidflow/expDepth <key> <value>
+
+- riseFactor
+   * ``key``: key for the fluidflow instance (string)
+   * ``value``: riseFactor value (double)
+
+  ::
+
+    /fluidflow/riseFactor <key> <value>
+
+- riseCutoff
+   * ``key``: key for the fluidflow instance (string)
+   * ``value``: riseCutoff value (double)
+
+  ::
+
+    /fluidflow/riseCutoff <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the fluidflow instance (string)
+
+  ::
+
+    /fluidflow/log <key>
+
+- save
+   * ``key``: key for the fluidflow instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /fluidflow/save <key> <filepath>
+
+- load
+   * ``key``: key for the fluidflow instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /fluidflow/load <key> <filepath>
+
+modaltracker
+============
+attributes
+----------
+- nModes
+   * ``key``: key for the modaltracker instance (string)
+   * ``value``: nModes value (integer)
+
+  ::
+
+    /modaltracker/nModes <key> <value>
+
+- bufferSize
+   * ``key``: key for the modaltracker instance (string)
+   * ``value``: bufferSize value (integer)
+
+  ::
+
+    /modaltracker/bufferSize <key> <value>
+
+- winSize
+   * ``key``: key for the modaltracker instance (string)
+   * ``value``: winSize value (integer)
+
+  ::
+
+    /modaltracker/winSize <key> <value>
+
+- overlap
+   * ``key``: key for the modaltracker instance (string)
+   * ``value``: overlap value (double)
+
+  ::
+
+    /modaltracker/overlap <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the modaltracker instance (string)
+
+  ::
+
+    /modaltracker/log <key>
+
+- save
+   * ``key``: key for the modaltracker instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /modaltracker/save <key> <filepath>
+
+- load
+   * ``key``: key for the modaltracker instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /modaltracker/load <key> <filepath>
+
+motor
+=====
+attributes
+----------
+- maxDelay
+   * ``key``: key for the motor instance (string)
+   * ``value``: maxDelay value (integer)
+
+  ::
+
+    /motor/maxDelay <key> <value>
+
+- cycle
+   * ``key``: key for the motor instance (string)
+   * ``value``: cycle value (double)
+
+  ::
+
+    /motor/cycle <key> <value>
+
+- nCylinders
+   * ``key``: key for the motor instance (string)
+   * ``value``: nCylinders value (integer)
+
+  ::
+
+    /motor/nCylinders <key> <value>
+
+- cylinderSize
+   * ``key``: key for the motor instance (string)
+   * ``value``: cylinderSize value (double)
+
+  ::
+
+    /motor/cylinderSize <key> <value>
+
+- compressionRatio
+   * ``key``: key for the motor instance (string)
+   * ``value``: compressionRatio value (double)
+
+  ::
+
+    /motor/compressionRatio <key> <value>
+
+- sparkTime
+   * ``key``: key for the motor instance (string)
+   * ``value``: sparkTime value (double)
+
+  ::
+
+    /motor/sparkTime <key> <value>
+
+- asymmetry
+   * ``key``: key for the motor instance (string)
+   * ``value``: asymmetry value (double)
+
+  ::
+
+    /motor/asymmetry <key> <value>
+
+- backfire
+   * ``key``: key for the motor instance (string)
+   * ``value``: backfire value (double)
+
+  ::
+
+    /motor/backfire <key> <value>
+
+- intakeSize
+   * ``key``: key for the motor instance (string)
+   * ``value``: intakeSize value (double)
+
+  ::
+
+    /motor/intakeSize <key> <value>
+
+- extractorSize
+   * ``key``: key for the motor instance (string)
+   * ``value``: extractorSize value (double)
+
+  ::
+
+    /motor/extractorSize <key> <value>
+
+- exhaustSize
+   * ``key``: key for the motor instance (string)
+   * ``value``: exhaustSize value (double)
+
+  ::
+
+    /motor/exhaustSize <key> <value>
+
+- expansion
+   * ``key``: key for the motor instance (string)
+   * ``value``: expansion value (double)
+
+  ::
+
+    /motor/expansion <key> <value>
+
+- mufflerSize
+   * ``key``: key for the motor instance (string)
+   * ``value``: mufflerSize value (double)
+
+  ::
+
+    /motor/mufflerSize <key> <value>
+
+- mufflerFeedback
+   * ``key``: key for the motor instance (string)
+   * ``value``: mufflerFeedback value (double)
+
+  ::
+
+    /motor/mufflerFeedback <key> <value>
+
+- outletSize
+   * ``key``: key for the motor instance (string)
+   * ``value``: outletSize value (double)
+
+  ::
+
+    /motor/outletSize <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the motor instance (string)
+
+  ::
+
+    /motor/log <key>
+
+- save
+   * ``key``: key for the motor instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /motor/save <key> <filepath>
+
+- load
+   * ``key``: key for the motor instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /motor/load <key> <filepath>
+
+myo
+===
+attributes
+----------
+- dcFrequency
+   * ``key``: key for the myo instance (string)
+   * ``value``: dcFrequency value (double)
+
+  ::
+
+    /myo/dcFrequency <key> <value>
+
+- lowFrequency
+   * ``key``: key for the myo instance (string)
+   * ``value``: lowFrequency value (double)
+
+  ::
+
+    /myo/lowFrequency <key> <value>
+
+- highFrequency
+   * ``key``: key for the myo instance (string)
+   * ``value``: highFrequency value (double)
+
+  ::
+
+    /myo/highFrequency <key> <value>
+
+- threshold
+   * ``key``: key for the myo instance (string)
+   * ``value``: threshold value (double)
+
+  ::
+
+    /myo/threshold <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the myo instance (string)
+
+  ::
+
+    /myo/log <key>
+
+- save
+   * ``key``: key for the myo instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /myo/save <key> <filepath>
+
+- load
+   * ``key``: key for the myo instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /myo/load <key> <filepath>
+
+pitch
+=====
+attributes
+----------
+- size
+   * ``key``: key for the pitch instance (string)
+   * ``value``: size value (integer)
+
+  ::
+
+    /pitch/size <key> <value>
+
+- overlap
+   * ``key``: key for the pitch instance (string)
+   * ``value``: overlap value (double)
+
+  ::
+
+    /pitch/overlap <key> <value>
+
+- tolerance
+   * ``key``: key for the pitch instance (string)
+   * ``value``: tolerance value (double)
+
+  ::
+
+    /pitch/tolerance <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the pitch instance (string)
+
+  ::
+
+    /pitch/log <key>
+
+- save
+   * ``key``: key for the pitch instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /pitch/save <key> <filepath>
+
+- load
+   * ``key``: key for the pitch instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /pitch/load <key> <filepath>
+
+pitchshift
+==========
+attributes
+----------
+- size
+   * ``key``: key for the pitchshift instance (string)
+   * ``value``: size value (integer)
+
+  ::
+
+    /pitchshift/size <key> <value>
+
+- oversample
+   * ``key``: key for the pitchshift instance (string)
+   * ``value``: oversample value (integer)
+
+  ::
+
+    /pitchshift/oversample <key> <value>
+
+- ratio
+   * ``key``: key for the pitchshift instance (string)
+   * ``value``: ratio value (double)
+
+  ::
+
+    /pitchshift/ratio <key> <value>
+
+- overlap
+   * ``key``: key for the pitchshift instance (string)
+   * ``value``: overlap value (double)
+
+  ::
+
+    /pitchshift/overlap <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the pitchshift instance (string)
+
+  ::
+
+    /pitchshift/log <key>
+
+- save
+   * ``key``: key for the pitchshift instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /pitchshift/save <key> <filepath>
+
+- load
+   * ``key``: key for the pitchshift instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /pitchshift/load <key> <filepath>
+
+reverb
+======
+attributes
+----------
+- maxDelay
+   * ``key``: key for the reverb instance (string)
+   * ``value``: maxDelay value (integer)
+
+  ::
+
+    /reverb/maxDelay <key> <value>
+
+- xSize
+   * ``key``: key for the reverb instance (string)
+   * ``value``: xSize value (double)
+
+  ::
+
+    /reverb/xSize <key> <value>
+
+- ySize
+   * ``key``: key for the reverb instance (string)
+   * ``value``: ySize value (double)
+
+  ::
+
+    /reverb/ySize <key> <value>
+
+- zSize
+   * ``key``: key for the reverb instance (string)
+   * ``value``: zSize value (double)
+
+  ::
+
+    /reverb/zSize <key> <value>
+
+- randomness
+   * ``key``: key for the reverb instance (string)
+   * ``value``: randomness value (double)
+
+  ::
+
+    /reverb/randomness <key> <value>
+
+- time
+   * ``key``: key for the reverb instance (string)
+   * ``value``: time value (double)
+
+  ::
+
+    /reverb/time <key> <value>
+
+- time1k
+   * ``key``: key for the reverb instance (string)
+   * ``value``: time1k value (double)
+
+  ::
+
+    /reverb/time1k <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the reverb instance (string)
+
+  ::
+
+    /reverb/log <key>
+
+- save
+   * ``key``: key for the reverb instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /reverb/save <key> <filepath>
+
+- load
+   * ``key``: key for the reverb instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /reverb/load <key> <filepath>
+
+rolling
+=======
+attributes
+----------
+- grain
+   * ``key``: key for the rolling instance (string)
+   * ``value``: grain value (double)
+
+  ::
+
+    /rolling/grain <key> <value>
+
+- depth
+   * ``key``: key for the rolling instance (string)
+   * ``value``: depth value (double)
+
+  ::
+
+    /rolling/depth <key> <value>
+
+- mass
+   * ``key``: key for the rolling instance (string)
+   * ``value``: mass value (double)
+
+  ::
+
+    /rolling/mass <key> <value>
+
+- velocity
+   * ``key``: key for the rolling instance (string)
+   * ``value``: velocity value (double)
+
+  ::
+
+    /rolling/velocity <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the rolling instance (string)
+
+  ::
+
+    /rolling/log <key>
+
+- save
+   * ``key``: key for the rolling instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /rolling/save <key> <filepath>
+
+- load
+   * ``key``: key for the rolling instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /rolling/load <key> <filepath>
+
+scraping
+========
+attributes
+----------
+- grain
+   * ``key``: key for the scraping instance (string)
+   * ``value``: grain value (double)
+
+  ::
+
+    /scraping/grain <key> <value>
+
+- force
+   * ``key``: key for the scraping instance (string)
+   * ``value``: force value (double)
+
+  ::
+
+    /scraping/force <key> <value>
+
+- velocity
+   * ``key``: key for the scraping instance (string)
+   * ``value``: velocity value (double)
+
+  ::
+
+    /scraping/velocity <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the scraping instance (string)
+
+  ::
+
+    /scraping/log <key>
+
+- save
+   * ``key``: key for the scraping instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /scraping/save <key> <filepath>
+
+- load
+   * ``key``: key for the scraping instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /scraping/load <key> <filepath>
+
+spectralfeats
+=============
+attributes
+----------
+- size
+   * ``key``: key for the spectralfeats instance (string)
+   * ``value``: size value (integer)
+
+  ::
+
+    /spectralfeats/size <key> <value>
+
+- overlap
+   * ``key``: key for the spectralfeats instance (string)
+   * ``value``: overlap value (double)
+
+  ::
+
+    /spectralfeats/overlap <key> <value>
+
+- minFreq
+   * ``key``: key for the spectralfeats instance (string)
+   * ``value``: minFreq value (double)
+
+  ::
+
+    /spectralfeats/minFreq <key> <value>
+
+- maxFreq
+   * ``key``: key for the spectralfeats instance (string)
+   * ``value``: maxFreq value (double)
+
+  ::
+
+    /spectralfeats/maxFreq <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the spectralfeats instance (string)
+
+  ::
+
+    /spectralfeats/log <key>
+
+- save
+   * ``key``: key for the spectralfeats instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /spectralfeats/save <key> <filepath>
+
+- load
+   * ``key``: key for the spectralfeats instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /spectralfeats/load <key> <filepath>
+
+windcavity
+==========
+attributes
+----------
+- maxDelay
+   * ``key``: key for the windcavity instance (string)
+   * ``value``: maxDelay value (integer)
+
+  ::
+
+    /windcavity/maxDelay <key> <value>
+
+- length
+   * ``key``: key for the windcavity instance (string)
+   * ``value``: length value (double)
+
+  ::
+
+    /windcavity/length <key> <value>
+
+- diameter
+   * ``key``: key for the windcavity instance (string)
+   * ``value``: diameter value (double)
+
+  ::
+
+    /windcavity/diameter <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the windcavity instance (string)
+
+  ::
+
+    /windcavity/log <key>
+
+- save
+   * ``key``: key for the windcavity instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /windcavity/save <key> <filepath>
+
+- load
+   * ``key``: key for the windcavity instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /windcavity/load <key> <filepath>
+
+windkarman
+==========
+attributes
+----------
+- diameter
+   * ``key``: key for the windkarman instance (string)
+   * ``value``: diameter value (double)
+
+  ::
+
+    /windkarman/diameter <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the windkarman instance (string)
+
+  ::
+
+    /windkarman/log <key>
+
+- save
+   * ``key``: key for the windkarman instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /windkarman/save <key> <filepath>
+
+- load
+   * ``key``: key for the windkarman instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /windkarman/load <key> <filepath>
+
+windflow
+========
+attributes
+----------
+
+
+utilities
+---------
+- log
+   * ``key``: key for the windflow instance (string)
+
+  ::
+
+    /windflow/log <key>
+
+- save
+   * ``key``: key for the windflow instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /windflow/save <key> <filepath>
+
+- load
+   * ``key``: key for the windflow instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /windflow/load <key> <filepath>
+
+zerox
+=====
+attributes
+----------
+- size
+   * ``key``: key for the zerox instance (string)
+   * ``value``: size value (integer)
+
+  ::
+
+    /zerox/size <key> <value>
+
+- overlap
+   * ``key``: key for the zerox instance (string)
+   * ``value``: overlap value (double)
+
+  ::
+
+    /zerox/overlap <key> <value>
+
+
+
+utilities
+---------
+- log
+   * ``key``: key for the zerox instance (string)
+
+  ::
+
+    /zerox/log <key>
+
+- save
+   * ``key``: key for the zerox instance (string)
+   * ``filepath``: file path for writing (string)
+
+  ::
+
+    /zerox/save <key> <filepath>
+
+- load
+   * ``key``: key for the zerox instance (string)
+   * ``filepath``: file path for reading (string)
+
+  ::
+
+    /zerox/load <key> <filepath>
+
