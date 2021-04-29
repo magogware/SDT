@@ -114,7 +114,6 @@ var searchData=
   ['sdt_5funregisterinteractor',['SDT_unregisterInteractor',['../group__solids.html#ga76b9f01d7a3a55eee9df3a32c810109a',1,'SDTSolids.h']]],
   ['sdt_5funregisterresonator',['SDT_unregisterResonator',['../group__solids.html#gacccd077a38a5fa07ee1b15794367a82b',1,'SDTSolids.h']]],
   ['sdt_5fver',['SDT_ver',['../group__common.html#gab6e61b5e260d784833e230a33efc6a48',1,'SDTCommon.h']]],
-  ['sdt_5fver_5fstr',['SDT_ver_str',['../group__common.html#gaf8d98d86bcb77f3f61403b29483527d5',1,'SDTCommon.h']]],
   ['sdt_5fweightedaverage',['SDT_weightedAverage',['../group__common.html#ga36d01ec3a53f773df925d9eeecb875ac',1,'SDTCommon.h']]],
   ['sdt_5fwhitenoise',['SDT_whiteNoise',['../group__oscillators.html#ga442d1292dbae9332064f427ee40c15d4',1,'SDTOscillators.h']]],
   ['sdt_5fwrap',['SDT_wrap',['../group__common.html#gaf2814f001608a20056a135d35fd22317',1,'SDTCommon.h']]],

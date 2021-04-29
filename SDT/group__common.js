@@ -9,7 +9,6 @@ var group__common =
     [ "SDT_SQRT2", "group__common.html#ga149970c64ee7b729156953a71d24223d", null ],
     [ "SDT_TWOPI", "group__common.html#gac8193381f9a9cbb3203c93e0f1cd2502", null ],
     [ "SDT_ver", "group__common.html#gab6e61b5e260d784833e230a33efc6a48", null ],
-    [ "SDT_ver_str", "group__common.html#gaf8d98d86bcb77f3f61403b29483527d5", null ],
     [ "SDT_argMax", "group__common.html#ga433b61b46dc1a809a385e0c27b942be3", null ],
     [ "SDT_argMin", "group__common.html#ga249501cc8afb194e02c54df1bc8dada1", null ],
     [ "SDT_average", "group__common.html#ga4d21f34985117192454661b502437207", null ],
