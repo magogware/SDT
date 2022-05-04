@@ -2,6 +2,7 @@
 #include "SDTSolids.h"
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 SDTOSCReturnCode SDTOSCResonator(void (* log)(const char *, ...), const SDTOSCMessage* x) {
   SDTOSCArgumentList *args = SDTOSCMessage_getArguments(x);

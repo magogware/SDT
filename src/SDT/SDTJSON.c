@@ -4,6 +4,7 @@
 #include <string.h>
 #include <libgen.h>
 #include <sys/stat.h>
+#include <stdlib.h>
 
 json_serialize_opts sdt_json_opts() {
   json_serialize_opts opts;
