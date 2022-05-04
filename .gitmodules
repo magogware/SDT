@@ -4,3 +4,6 @@
 [submodule "3rdparty/json-builder"]
 	path = 3rdparty/json-builder
 	url = https://github.com/ChromaticIsobar/json-builder.git
+[submodule "3rdparty/pure-data"]
+	path = 3rdparty/pure-data
+	url = https://github.com/pure-data/pure-data

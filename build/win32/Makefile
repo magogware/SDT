@@ -24,8 +24,8 @@ PDDIR=$(SRCDIR)/Pd
 PDSRCS=$(wildcard $(PDDIR)/*.c)
 PDOBJS=$(patsubst %.c,%.o,$(PDSRCS))
 
-PDSDKDIR=$(THIRDPDIR)/Pd
-PDSDKVERSION=0.41.4
+PDSDKDIR=$(THIRDPDIR)/pure-data/src
+PDSDKVERSION=0.52.2
 
 JSONDIRB=$(THIRDPDIR)/json-builder
 JSONSRCB=$(wildcard $(JSONDIRB)/*.c)

@@ -22,7 +22,7 @@ This macro makes the function return NULL if there are unused arguments (and als
 #define SDT_PD_ARG_PARSE(N, ...) long argi[ N ], uarg; \
 t_atomtype targs[] = {__VA_ARGS__}; \
 if ((uarg = sdt_pd_arg_parse(s, argc, argv, N, targs, argi)) >= 0) { \
-  error("sdt.%s: unused argument in position %ld", s->s_name, uarg); \
+  pd_error(0, "sdt.%s: unused argument in position %ld", s->s_name, uarg); \
   return NULL; \
 }
 
@@ -53,7 +53,7 @@ If the registration is unsuccessful, this macro makes the function return NULL
 #define SDT_PD_REGISTER(T, F, S, I) x->key = GET_ARG(I, atom_getsymbol, 0, ->s_name); \
 if (x->key) \
   if (SDT_register ## T(x-> F, x->key)) { \
-  error("sdt.%s: Error while registering the %s. Probably a duplicate id?", s->s_name, S); \
+  pd_error(0, "sdt.%s: Error while registering the %s. Probably a duplicate id?", s->s_name, S); \
   SDT ## T ## _free(x-> F); \
   return NULL; \
 }
