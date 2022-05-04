@@ -11,7 +11,7 @@ static t_class *friction_class;
 typedef struct _friction {
   t_object obj;
   SDTInteractor *friction;
-  char *key0, *key1;
+  const char *key0, *key1;
   t_float f;
   t_inlet *in1, *in2, *in3, *in4, *in5;
   t_outlet **outs;
@@ -100,7 +100,7 @@ void *friction_new(t_symbol *s, long argc, t_atom *argv) {
   int i;
   
   if (argc < 3 || argv[0].a_type != A_SYMBOL || argv[1].a_type != A_SYMBOL || argv[2].a_type != A_FLOAT) {
-    error("sdt.friction~: Please provide the id of the first resonator as first argument, "
+    pd_error(0, "sdt.friction~: Please provide the id of the first resonator as first argument, "
           "the id of the second resonator as second argument "
           "and the number of available outlets as third argument.");
     return NULL;
@@ -110,7 +110,7 @@ void *friction_new(t_symbol *s, long argc, t_atom *argv) {
   x->key0 = (char *)(atom_getsymbol(argv)->s_name);
   x->key1 = (char *)(atom_getsymbol(argv + 1)->s_name);
   if (SDT_registerInteractor(x->friction, x->key0, x->key1)) {
-    error("sdt.friction~: Error registering the interaction. Probably a duplicate id?");
+    pd_error(0, "sdt.friction~: Error registering the interaction. Probably a duplicate id?");
     SDTFriction_free(x->friction);
     return NULL;
   }

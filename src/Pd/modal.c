@@ -11,7 +11,7 @@ static t_class *modal_class;
 typedef struct _modal {
   t_object obj;
   SDTResonator *modal;
-  char *key;
+  const char *key;
   int nModes, nPickups;
   t_sample f;
 } t_modal;
@@ -69,7 +69,7 @@ void *modal_new(t_symbol *s, long argc, t_atom *argv) {
   t_modal *x;
   
   if (argc < 3 || argv[0].a_type != A_SYMBOL || argv[1].a_type != A_FLOAT || argv[2].a_type != A_FLOAT) {
-    error("modal: Please provide a unique id as first argument, "
+    pd_error(0, "modal: Please provide a unique id as first argument, "
           "the number of modes as second argument and "
           "the number of pickups as third argument.");
     return NULL;
@@ -80,7 +80,7 @@ void *modal_new(t_symbol *s, long argc, t_atom *argv) {
   x->nModes = atom_getint(argv + 1);
   x->nPickups = atom_getint(argv + 2);
   if (SDT_registerResonator(x->modal, x->key)) {
-    error("sdt.modal: Error registering the resonator. Probably a duplicate id?");
+    pd_error(0, "sdt.modal: Error registering the resonator. Probably a duplicate id?");
     SDTResonator_free(x->modal);
     return NULL;
   }

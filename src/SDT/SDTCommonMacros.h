@@ -143,13 +143,13 @@ Macros for generating Hashmap-related functions
 @param[in] T Name of the SDT type (without the leading "SDT")
 @param[in] X Name of the SDTHashmap global variable
 @param[in] S Size of the SDTHashmap */
-#define SDT_HASHMAP_REGISTER_H(T, X) extern int SDT_register ## T(struct SDT ## T *x, char *key);
+#define SDT_HASHMAP_REGISTER_H(T, X) extern int SDT_register ## T(struct SDT ## T *x, const char *key);
 
 /** @brief Define a SDTHashmap "register" function
 @param[in] T Name of the SDT type (without the leading "SDT")
 @param[in] X Name of the SDTHashmap global variable
 @param[in] S Size of the SDTHashmap */
-#define SDT_HASHMAP_REGISTER(T, X, S) int SDT_register ## T(struct SDT ## T *x, char *key) { \
+#define SDT_HASHMAP_REGISTER(T, X, S) int SDT_register ## T(struct SDT ## T *x, const char *key) { \
   if (! X) X = SDTHashmap_new(S); \
   if (SDTHashmap_put(X, key, x)) return 1; \
   return 0; \
@@ -170,12 +170,12 @@ Macros for generating Hashmap-related functions
 /** @brief Define a SDTHashmap "unregister" function declaration
 @param[in] T Name of the SDT type (without the leading "SDT")
 @param[in] X Name of the SDTHashmap global variable */
-#define SDT_HASHMAP_UNREGISTER_H(T, X) extern int SDT_unregister ## T(char *key);
+#define SDT_HASHMAP_UNREGISTER_H(T, X) extern int SDT_unregister ## T(const char *key);
 
 /** @brief Define a SDTHashmap "unregister" function
 @param[in] T Name of the SDT type (without the leading "SDT")
 @param[in] X Name of the SDTHashmap global variable */
-#define SDT_HASHMAP_UNREGISTER(T, X) int SDT_unregister ## T(char *key) { \
+#define SDT_HASHMAP_UNREGISTER(T, X) int SDT_unregister ## T(const char *key) { \
   if (! X) return 1; \
   if (SDTHashmap_del(X, key)) return 1; \
   return 0; \

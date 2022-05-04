@@ -13,7 +13,7 @@ typedef struct _pitch {
   SDTPitch *pitch;
   t_float f;
   t_outlet *out0, *out1;
-  char *key;
+  const char *key;
 } t_pitch;
 
 void pitch_overlap(t_pitch *x, t_float f) {

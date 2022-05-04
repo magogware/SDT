@@ -11,7 +11,7 @@ static t_class *impact_class;
 typedef struct _impact {
   t_object obj;
   SDTInteractor *impact;
-  char *key0, *key1;
+  const char *key0, *key1;
   t_float f;
   t_inlet *in1, *in2, *in3, *in4, *in5;
   t_outlet **outs;
@@ -76,7 +76,7 @@ void *impact_new(t_symbol *s, long argc, t_atom *argv) {
   int i;
   
   if (argc < 3 || argv[0].a_type != A_SYMBOL || argv[1].a_type != A_SYMBOL || argv[2].a_type != A_FLOAT) {
-    error("sdt.impact~: Please provide the id of the first resonator as first argument, "
+    pd_error(0, "sdt.impact~: Please provide the id of the first resonator as first argument, "
           "the id of the second resonator as second argument "
           "and the number of available outlets as third argument.");
     return NULL;
@@ -86,7 +86,7 @@ void *impact_new(t_symbol *s, long argc, t_atom *argv) {
   x->key0 = (char *)(atom_getsymbol(argv)->s_name);
   x->key1 = (char *)(atom_getsymbol(argv + 1)->s_name);
   if (SDT_registerInteractor(x->impact, x->key0, x->key1)) {
-    error("sdt.impact~: Error registering the interaction. Probably a duplicate id?");
+    pd_error(0, "sdt.impact~: Error registering the interaction. Probably a duplicate id?");
     SDTImpact_free(x->impact);
     return NULL;
   }

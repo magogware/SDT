@@ -22,7 +22,7 @@ extern "C" {
 If an interactor with the same ID is present, the resonator is bound to the interactor.
 @param[in] x Resonator instance to register
 @param[in] key Unique ID assigned to the resonator instance */
-extern int SDT_registerResonator(SDTResonator *x, char *key);
+extern int SDT_registerResonator(SDTResonator *x, const char *key);
 
 /** @brief Queries the resonators list by its unique ID.
 If a resonator with the ID is present, a pointer to the resonator is returned.
@@ -35,14 +35,14 @@ extern SDTResonator *SDT_getResonator(const char *key);
 If a resonator with the given ID is present, it is unregistered from the list. If also an
 interactor with the same ID is present, the object is released by the interactor as well.
 @param[in] key Unique ID of the resonator instance to unregister */
-extern int SDT_unregisterResonator(char *key);
+extern int SDT_unregisterResonator(const char *key);
 
 /** @brief Registers an interactor into the interactors list with two unique IDs, one for each resonator.
 If resonators with the same IDs are present, they are immediately bound to the interactor.
 @param[in] x Resonator instance to register
 @param[in] key0 Unique ID of the first resonator
 @param[in] key1 Unique ID of the second resonator */
-extern int SDT_registerInteractor(SDTInteractor *x, char *key0, char *key1);
+extern int SDT_registerInteractor(SDTInteractor *x, const char *key0, const char *key1);
 
 /** @brief Retrieves an interactor from the interactors list.
 If an interactor with the given IDs is present, it is retrieved from the list.
@@ -55,7 +55,7 @@ extern SDTInteractor *SDT_getInteractor(const char *key0, const char *key1);
 If an interactor with the given IDs is present, it is unregistered from the list.
 @param[in] key0 Unique ID of the first resonator
 @param[in] key1 Unique ID of the second resonator */
-extern int SDT_unregisterInteractor(char *key0, char *key1);
+extern int SDT_unregisterInteractor(const char *key0, const char *key1);
 
 #ifdef __cplusplus
 };

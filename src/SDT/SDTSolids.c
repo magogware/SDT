@@ -8,7 +8,7 @@ SDT_DEFINE_HASHMAP_GLOBAL(resonators)
 SDT_DEFINE_HASHMAP_GLOBAL(interactors0)
 SDT_DEFINE_HASHMAP_GLOBAL(interactors1)
 
-void SDT_updateInteractors(char *key) {
+void SDT_updateInteractors(const char *key) {
   SDTResonator *resonator;
   SDTInteractor *interactor;
   
@@ -24,7 +24,7 @@ void SDT_updateInteractors(char *key) {
   }
 }
 
-int SDT_registerResonator(SDTResonator *x, char *key) { 
+int SDT_registerResonator(SDTResonator *x, const char *key) { 
   if (!resonators) resonators = SDTHashmap_new(HASHMAP_SIZE);
   if (SDTHashmap_put(resonators, key, x)) return 1;
   SDT_updateInteractors(key);
@@ -33,14 +33,14 @@ int SDT_registerResonator(SDTResonator *x, char *key) {
 
 SDT_HASHMAP_GET(Resonator, resonators)
 
-int SDT_unregisterResonator(char *key) {
+int SDT_unregisterResonator(const char *key) {
   if (!resonators) return 1;
   if (SDTHashmap_del(resonators, key)) return 1;
   SDT_updateInteractors(key);
   return 0;
 }
 
-int SDT_registerInteractor(SDTInteractor *x, char *key0, char *key1) {
+int SDT_registerInteractor(SDTInteractor *x, const char *key0, const char *key1) {
   SDTResonator *resonator0, *resonator1;
   
   if (!interactors0) interactors0 = SDTHashmap_new(HASHMAP_SIZE);
@@ -74,7 +74,7 @@ SDTInteractor *SDT_getInteractor(const char *key0, const char *key1) {
   return 0;
 }
 
-int SDT_unregisterInteractor(char *key0, char *key1) {
+int SDT_unregisterInteractor(const char *key0, const char *key1) {
   if (!interactors0 || !interactors1) return 1;
   if (!SDTHashmap_get(interactors0, key0) || !SDTHashmap_get(interactors1, key1)) return 1;
   SDTHashmap_del(interactors0, key0);

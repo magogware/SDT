@@ -20,7 +20,7 @@ typedef struct _windcavity {
   SDTWindCavity *cavity;
   t_float f;
   t_outlet *out;
-  char *key;
+  const char *key;
 } t_windcavity;
 
 void windcavity_length(t_windcavity *x, t_float f) {

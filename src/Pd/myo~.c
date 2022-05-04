@@ -14,7 +14,7 @@ typedef struct _myo {
   t_float f;
   t_outlet *out0, *out1, *out2, *out3;
   double time;
-  char *key;
+  const char *key;
 } t_myo;
 
 void myo_dcFrequency(t_myo *x, t_float f) {
