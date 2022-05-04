@@ -25,6 +25,8 @@ PDSRCS=$(wildcard $(PDDIR)/*.c)
 PDOBJS=$(patsubst %.c,%.o,$(PDSRCS))
 
 PDSDKDIR=$(THIRDPDIR)/pure-data/src
+PDDLLDIR=$(THIRDPDIR)/pure-data/bin
+PDDLL=$(PDDLLDIR)/pd.dll
 PDSDKVERSION=0.52.2
 
 JSONDIRB=$(THIRDPDIR)/json-builder
@@ -40,8 +42,11 @@ JSONOBJS=$(JSONOBJP) $(JSONOBJB)
 
 all: core max pd
 
-pd: $(SDTOBJS) $(PDOBJS) $(JSONOBJS)
-	$(CC) $(LDFLAGS) -L$(PDSDKDIR) $(JSONOBJS) $(SDTOBJS) $(PDOBJS) -o $(PDDIR)/SDT.dll -lpd
+pd: $(SDTOBJS) $(PDOBJS) $(JSONOBJS) $(PDDLL)
+	$(CC) $(LDFLAGS) -L$(PDDLLDIR) $(JSONOBJS) $(SDTOBJS) $(PDOBJS) -o $(PDDIR)/SDT.dll -lpd
+
+$(PDDLL):
+	$(MAKE) -f $(PDSDKDIR)/makefile.mingw -C $(PDSDKDIR)
 
 $(PDDIR)/%.o: $(PDDIR)/%.c
 	$(CC) $(CFLAGS) -I$(SRCDIR) -I$(PDSDKDIR) $(INCLUDE_JSON) -c $< -o $@
